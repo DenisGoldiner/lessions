@@ -2,11 +2,11 @@ package com.denis.lessions;
 
 import java.util.Scanner;
 
-//класс предназначен для проведения простых 
-//арифметических операций над числами
+/**
+ * Class is processing simple mathematical operations
+ */
 public class InteractRunner{
-	
-	//главная точка входа в программу
+
 	public static void main (String[] args){
 		Scanner reader = new Scanner(System.in);
 		
@@ -48,7 +48,7 @@ public class InteractRunner{
 							calc.substruct(Integer.valueOf(first), Integer.valueOf(second));
 							break;
 						case "multiply": 
-							calc.muliply(Integer.valueOf(first), Integer.valueOf(second));
+							calc.multiply(Integer.valueOf(first), Integer.valueOf(second));
 							break;
 						case "division": 
 							calc.division(Integer.valueOf(first), Integer.valueOf(second));

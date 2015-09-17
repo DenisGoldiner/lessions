@@ -1,25 +1,23 @@
 package com.denis.lessions;
 
-import java.io.IOException;
-
 public class Calculator{
 	
 	/**
-	*результат вычислений
+	* result of calculations
 	*/
 	private double result;
 	
 	/**
-	*промежуточный результат
+	* intermediate result
 	*/
 	private double timeResult;
-	
+
 	/**
-	*выполнение суммирования
-	*@param entery входящие аргументы
-	*@throws Exception выдает выпадает в случае если нет аргументов
-	*/
-	public void summ (int ... entery)throws Exception{
+	 * Summary of entrance parameters
+	 * @param entery parameters to summ
+	 * @throws Exception throws in case of less than 2 args
+	 */
+	public void summ (int ... entery)throws CalcException{
 		if(entery.length > 1){	
 			this.timeResult = 0;
 			for(Integer param : entery){
@@ -27,16 +25,16 @@ public class Calculator{
 			}
 			this.result = this.timeResult;
 		} else {
-			throw new Exception("\nError, minimum count of parametrs is 2 \n");
+			throw new CalcException();
 		}				
 	}
-	
+
 	/**
-	*выполнение вычитания
-	*@param entery входящие аргументы
-	*@throws Exception выдает выпадает в случае если нет аргументов
-	*/
-	public void substruct (int ... entery)throws Exception{
+	 * Subtraction of entrance parameters
+	 * @param entery parameters to subtract
+	 * @throws Exception throws in case of less than 2 args
+	 */
+	public void substruct (int ... entery)throws CalcException{
 		if(entery.length > 1){		
 			this.timeResult = entery[0] * 2;
 			for(Integer param : entery){
@@ -44,16 +42,16 @@ public class Calculator{
 			}
 			this.result = this.timeResult;
 		} else {
-			throw new Exception("\nError, minimum count of parametrs is 2 \n");
+			throw new CalcException();
 		}						
 	}
-	
+
 	/**
-	*выполнение умножения
-	*@param entery входящие аргументы
-	*@throws Exception выдает выпадает в случае если нет аргументов
-	*/	
-	public void muliply (int ... entery)throws Exception{
+	 * Multiplication of entrance parameters
+	 * @param entery parameters to multiply
+	 * @throws Exception throws in case of less than 2 args
+	 */
+	public void multiply (int ... entery)throws CalcException{
 		if(entery.length > 1){
 			this.timeResult = 1;
 			for(Integer param : entery){
@@ -61,16 +59,16 @@ public class Calculator{
 			}
 			this.result = this.timeResult;
 		} else {
-			throw new Exception("\nError, minimum count of parametrs is 2 \n");
+			throw new CalcException();
 		}			
 	}
-	
+
 	/**
-	*выполнение деления
-	*@param entery входящие аргументы
-	*@throws Exception выдает выпадает в случае если нет аргументов
-	*/	
-	public void division (int ... entery)throws Exception{
+	 * Division of entrance parameters
+	 * @param entery parameters to divide
+	 * @throws Exception throws in case of less than 2 args
+	 */
+	public void division (int ... entery)throws CalcException{
 		if(entery.length > 1){
 			this.timeResult = (double)entery[0] * 2;
 			for(Integer param : entery){
@@ -78,19 +76,19 @@ public class Calculator{
 			}
 			this.result = this.timeResult;
 		} else {
-			throw new Exception("\nError, minimum count of parametrs is 2 \n");
+			throw new CalcException();
 		}
 	}
 	
 	/**
-	*возвращает результат вычислений
+	* Returns result of calculations
 	*/
 	public double getResult(){
 		return (this.result);
 	}
 	
 	/**
-	*отчищает результат вычислений, приравнивая его нулю
+	* Sets result to zero
 	*/	
 	public void cleanResult(){
 		this.result = 0;
